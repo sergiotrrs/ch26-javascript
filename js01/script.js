@@ -128,15 +128,20 @@ const sumatoriaEntera = 80 +  parseInt(myStringInteger);
 console.log("Valor de sumatoria entera: " + sumatoriaEntera) ; // 500
 
 // toBoolean
-const isBelicoso = "true"
+const isBelicoso = "false"
 console.log( typeof isBelicoso);
 console.log( Boolean(isBelicoso)  );
 
-if (   !isBelicoso )
+if (  isBelicoso === "false" ) 
     console.log("Denle su belikin");
 else
     console.log("Abra paso a la barredora");
 
-
+// Boolean
+// para que sea False, debe ser: "", 0, null, undefined
+// Number
+// [] = 0, [30] = 30, [3,1] = NaN, false = 0, true=1
+// String
+// []= "", [1,2] = "1,2", function(){} = function(){}, {} = [object Object]
 
 
