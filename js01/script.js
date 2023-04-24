@@ -46,7 +46,7 @@ console.log("Tipo de dato myVarNull: ", typeof(myVarNull) ); // object
 // -----------------------------------------------------------
 // Tipos de datos Object
 // Object:
-const misDatos = {
+const misDatosDePerfil = {
     // clave: valor
     nombre: "Sergio",
     apellido: "Torres",
@@ -55,12 +55,33 @@ const misDatos = {
     musicaPreferidaPorGenero: {
         rock: "La celula que explota",
         corridosTumbados: "Ella baila sola"
+    },
+    nombreCompleto: function fullName(){
+        //return misDatosDePerfil.nombre +" " + misDatosDePerfil.apellido + ", soy el belicón";
+        return this.nombre +" " + this.apellido + ", soy el belicón";
     }
 }
 
-console.log("Datos completos: ", misDatos );
-console.log("Nombre: ", misDatos.nombre );
-console.log("Música de fin de semana: ", misDatos.musicaPreferidaPorGenero.corridosTumbados);
+const misDatosDeInstagram = {
+    // clave: valor
+    nombre: "El Belicoso",
+    apellido: "666",
+    edad: null,
+    isBelicoso: true,
+    musicaPreferidaPorGenero: {
+        corridosTumbados: "El belicoso"
+    },
+    nombreCompleto: function fullName(){
+        //return misDatosDePerfil.nombre +" " + misDatosDePerfil.apellido + ", soy el belicón";
+        return this.nombre +" " + this.apellido + ", soy el belicón";
+    }
+}
 
+console.log("Datos completos: ", misDatosDePerfil );
+console.log("Nombre: ", misDatosDePerfil.nombre );
+console.log("Música de fin de semana: ", misDatosDePerfil.musicaPreferidaPorGenero.corridosTumbados);
+
+console.log("Nombre completo: ", misDatosDePerfil.nombreCompleto() );
+console.log("Nombre completo: ", misDatosDeInstagram.nombreCompleto() );
 
 
