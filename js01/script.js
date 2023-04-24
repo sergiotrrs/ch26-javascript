@@ -94,9 +94,49 @@ const cancionesPP = [
     "AMG",
     {
       2020: 5,
-      2021: 30,
-      2022: 56
+      2021: 30,  
+      2022: 56,
+      total: 91
     }
 ];
 
 console.log("Canción con color: ", cancionesPP[1]);
+console.log("Canciones hechas en en año 2021 ", cancionesPP[4].total  );
+console.log("Canciones hechas en en año 2021 ", cancionesPP[4]["total"]  );
+console.log("Canciones hechas en en año 2021 ", cancionesPP[4][2021]  );
+console.log("Canciones hechas en en año 2021 ", cancionesPP[4]["2021"]  );
+
+console.log("Num total de elementos: ", cancionesPP.length);
+console.log("Contiene la canción AMG: ", cancionesPP.indexOf("AMG")>-1  );
+
+// ---------------------------------------------
+// Conversión de datos
+const myNumber = 420; // Minutos en la sesión JS 01
+console.log("Num. minutos en la sesión: " + myNumber);
+// toString
+const myNumberTxt = String(myNumber);
+console.log("Num. minutos en la sesión: " + myNumberTxt);
+
+// toNumber
+const myString = "420";
+const sumatoria = 80 + Number(myString);
+console.log("Valor de sumatoria: " + sumatoria); // 500
+
+// toParseInt
+const myStringInteger = "420 5768";
+const sumatoriaEntera = 80 +  parseInt(myStringInteger);
+console.log("Valor de sumatoria entera: " + sumatoriaEntera) ; // 500
+
+// toBoolean
+const isBelicoso = "true"
+console.log( typeof isBelicoso);
+console.log( Boolean(isBelicoso)  );
+
+if (   !isBelicoso )
+    console.log("Denle su belikin");
+else
+    console.log("Abra paso a la barredora");
+
+
+
+
