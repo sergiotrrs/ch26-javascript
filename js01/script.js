@@ -62,7 +62,7 @@ const misDatosDePerfil = {
     }
 }
 
-const misDatosDeInstagram = {
+const miInstagram = {
     // clave: valor
     nombre: "El Belicoso",
     apellido: "666",
@@ -82,6 +82,21 @@ console.log("Nombre: ", misDatosDePerfil.nombre );
 console.log("Música de fin de semana: ", misDatosDePerfil.musicaPreferidaPorGenero.corridosTumbados);
 
 console.log("Nombre completo: ", misDatosDePerfil.nombreCompleto() );
-console.log("Nombre completo: ", misDatosDeInstagram.nombreCompleto() );
+console.log("Nombre completo: ", miInstagram.nombreCompleto() );
 
+// Array
+// Almacena difentes tipos de datos, su primer elemento es el indice 0
 
+const cancionesPP = [ 
+    "Soy el Belicón",
+    "El azul",
+    "El Tsurito",
+    "AMG",
+    {
+      2020: 5,
+      2021: 30,
+      2022: 56
+    }
+];
+
+console.log("Canción con color: ", cancionesPP[1]);
