@@ -252,3 +252,14 @@ function getCommonCoursesWithFilter(student1Courses,student2Courses) {
 const commonCourses = getCommonCoursesWithFilter(student1Courses, student2Courses);
 const commonCoursesWithStudent3 = getCommonCoursesWithFilter( commonCourses, student3Courses)
 console.log("Common courses:", commonCoursesWithStudent3.join(", "));
+
+// ------------------- Contar la cantidad de caracteres de una frase -----------
+// pepe pecas pica papas con un pico y una pala
+// la cantidad de letras 'p': 8
+// resolverlo usando arrow function
+
+phrase = 'Pepe Pecas Pica Papas Con Un Pico y Una Pala'
+
+const countChar = (p, phrase) => phrase.toLowerCase().split("").filter(c => c == p).length;
+
+console.log("Cantidad de letras 'p':", countChar('p', phrase))
