@@ -290,13 +290,15 @@ const factorialConCicloFor = ( numero ) => {
 }
 
 function factorialRecursivo ( numero ) {
-    if( numero === 1){
+    if( numero === 1)
         return 1;
-    }
-    else{
-        return numero * factorialRecursivo( numero - 1);
-    }
+    return numero * factorialRecursivo( numero - 1);
 }
+
+const factorial = number => (number === 2) ? 
+                    number :
+                    number * factorial(number - 1);
+
 
 console.log("Factorial de 5: " + factorialConCicloFor(5));
 console.log("Factorial de 5: " + factorialRecursivo(5));
