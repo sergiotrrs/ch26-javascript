@@ -174,3 +174,30 @@ function getNameAndPrint( funcionImprimir   ){ // Esta es la buena
 //getNameAndPrint( addH1 );
 
 // -------------------------------------------------------------------
+/*
+    Ejercicio 2
+    Escribe una función que tome un arreglo de números,
+    duplique el valor de cada número del arreglo,
+    e imprima el nuevo arreglo actualizado.
+    [5, 10, 15, 20, 25] -> [10, 20, 30, 40, 50]
+*/
+
+function double(arr) {
+    const doubleNumbers = [];
+    for (let i = 0; i < arr.length; i++) {
+      const duplicate = arr[i] * 2;
+      doubleNumbers.push(duplicate);
+    }
+   return doubleNumbers;
+}
+
+const duplicate = (number) => number * 2;
+
+function doubleWithMap( array ){
+    const duplicateNumber = array.map( duplicate  );
+    return duplicateNumber;
+}
+
+const numbers = [5, 10, 15, 20, 25]; 
+//console.log(double(numbers));
+console.log(doubleWithMap(numbers));
