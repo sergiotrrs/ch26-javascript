@@ -172,6 +172,10 @@ function getNameAndPrint( funcionImprimir   ){ // Esta es la buena
 //getNameAndPrint( printToConsole   );  
 //getNameAndPrint( showAlert );
 //getNameAndPrint( addH1 );
+/*getNameAndPrint( function imp(txt){ 
+    console.log(txt) 
+}  );
+*/
 
 // -------------------------------------------------------------------
 /*
@@ -191,13 +195,22 @@ function double(arr) {
    return doubleNumbers;
 }
 
-const duplicate = (number) => number * 2;
+// Función que nos sirve de callback
+// const duplicate = (number) => number * 2;
+/*
+function doubleWithMap( array ){
+    const duplicateNumber = array.map( function(number){
+        return number * 2;
+    }  );
+    return duplicateNumber;
+}*/
 
 function doubleWithMap( array ){
-    const duplicateNumber = array.map( duplicate  );
-    return duplicateNumber;
+   return array.map( number=> number * 2 );    
 }
+
 
 const numbers = [5, 10, 15, 20, 25]; 
 //console.log(double(numbers));
 console.log(doubleWithMap(numbers));
+console.log(numbers);
