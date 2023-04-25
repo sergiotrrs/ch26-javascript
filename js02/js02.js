@@ -226,9 +226,6 @@ console.log( numbers );
 */
 
 
-const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
-const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
-
 
 function cursosEnComun (student1Courses,student2Courses) {
     const courses = [];
@@ -242,11 +239,16 @@ function cursosEnComun (student1Courses,student2Courses) {
     return `Cursos en común: ${courses}`;     
   }
 
-  // Usar filter y usar includes
-function cursosEnComunV2(student1Courses,student2Courses){
-    return student1Courses.filter(course => student2Courses.includes(course))
+// --------------------- Usando método filter e includes
+
+const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
+const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+const student3Courses = ["Music"];
+
+function getCommonCoursesWithFilter(student1Courses,student2Courses) {
+    return student1Courses.filter(course => student2Courses.includes(course));
 }
 
-
-console.log(cursosEnComun( student1Courses, student2Courses ));
-console.log(`Cursos en común: ${cursosEnComunV2( student1Courses, student2Courses )}`);
+const commonCourses = getCommonCoursesWithFilter(student1Courses, student2Courses);
+const commonCoursesWithStudent3 = getCommonCoursesWithFilter( commonCourses, student3Courses)
+console.log("Common courses:", commonCoursesWithStudent3.join(", "));
