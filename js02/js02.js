@@ -213,4 +213,40 @@ function doubleWithMap( array ){
 const numbers = [5, 10, 15, 20, 25]; 
 //console.log(double(numbers));
 console.log(doubleWithMap(numbers));
-console.log(numbers);
+console.log( numbers.map(number => number * 2)); // numbers.map()
+console.log( numbers );
+
+
+/*
+  Ejercicio 4
+  Crear un programa que itere sobre dos arreglos;
+  si hay cursos en común, imprimirlos en la consola.
+
+  salida: "Cursos en común: Programming, Music"
+*/
+
+
+const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
+const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+
+
+function cursosEnComun (student1Courses,student2Courses) {
+    const courses = [];
+    for (let i=0; i < student1Courses.length; i++) {
+     for (let j=0; j < student2Courses.length; j++) {
+      if (student1Courses[i] == student2Courses[j]){
+        courses.push( student1Courses[i] );
+      }
+     }
+    }
+    return `Cursos en común: ${courses}`;     
+  }
+
+  // Usar filter y usar includes
+function cursosEnComunV2(student1Courses,student2Courses){
+    return student1Courses.filter(course => student2Courses.includes(course))
+}
+
+
+console.log(cursosEnComun( student1Courses, student2Courses ));
+console.log(`Cursos en común: ${cursosEnComunV2( student1Courses, student2Courses )}`);
