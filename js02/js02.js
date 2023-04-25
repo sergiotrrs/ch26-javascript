@@ -164,18 +164,13 @@ function getNamePrintToDOM(   ){
     const text = `Hola ${name}, espero tengas un gran día`;
     addH1(text);
 }
-function getNameAndPrint( opcion   ){ // Esta es la buena
+function getNameAndPrint( funcionImprimir   ){ // Esta es la buena
     const name = prompt("Dime tu nombre");
     const text = `Hola ${name}, espero tengas un gran día`;
-    if (opcion === 1)
-      printToConsole(text);
-    else if(opcion===2)
-      addH1(text);
-    else
-      showAlert(text);
+    funcionImprimir(text);
 }
-getNameAndPrint(1);
-getNameAndPrint(2);
-getNameAndPrint(3);
-// getNamePrintToConsole();
-// getNamePrintToDOM();
+//getNameAndPrint( printToConsole   );  
+//getNameAndPrint( showAlert );
+//getNameAndPrint( addH1 );
+
+// -------------------------------------------------------------------
