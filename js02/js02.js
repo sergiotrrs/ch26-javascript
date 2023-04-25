@@ -263,3 +263,41 @@ phrase = 'Pepe Pecas Pica Papas Con Un Pico y Una Pala'
 const countChar = (p, phrase) => phrase.toLowerCase().split("").filter(c => c == p).length;
 
 console.log("Cantidad de letras 'p':", countChar('p', phrase))
+
+// -------------------- Funciones Recursivas ------------------------------
+// Es una técnica de programación en donde la función se llama así misma.
+// Se debe tener precausión de no entrar a un bucle infinito.
+
+/*
+  function funcionRecursiva( valor ){
+    if ( condiciónDeParo ){
+
+    }
+    else {
+        // Llamada recursiva.
+    }
+  }
+
+*/
+
+const factorialConCicloFor = ( numero ) => {
+    let factorial = 1;
+    for (let i = 1; i <= numero; i++) {
+        factorial *= i; // factorial = factorial * i;
+        
+    }
+    return factorial;
+}
+
+function factorialRecursivo ( numero ) {
+    if( numero === 1){
+        return 1;
+    }
+    else{
+        return numero * factorialRecursivo( numero - 1);
+    }
+}
+
+console.log("Factorial de 5: " + factorialConCicloFor(5));
+console.log("Factorial de 5: " + factorialRecursivo(5));
+
