@@ -89,11 +89,31 @@ let mensaje;
 //else mensaje = `${temperatura} grados no es ideal`;
 if (temperatura === 21) 
   mensaje = `Temperatura ideal ${temperatura}`; 
-else if( temperatura > 21) 
+else if( temperatura > 21 && temperatura < 40) 
   mensaje = `Temperatura de ${temperatura} grados es caliente`;
+else if( temperatura > 40) 
+  mensaje = `Temperatura de ${temperatura} grados es super caliente, bendiciones`;
 else if( temperatura < 21) 
   mensaje = `Temperatura de ${temperatura} grados es fría`;
 else 
   mensaje = `Temperatura de ${temperatura} grados no existe`;
 
 console.log(mensaje);
+
+// --------------------- Ejercicio -----------------------------------------
+/*
+ Preguntar por el númer de mes, del 1 al 12 (prompt o DOM)
+ de acuerdo al mes desplegar en un Alert (o en el DOM) la estación del año.
+
+ mes 12, 1, 2 = invierno
+ mes 3, 4, 5 = Primavera
+ mes 6, 7, 8 = Verano
+ mes 9, 10, 11 = Otoño
+
+ Usar if-else
+*/
+
+const getEstacion = ()=>{
+
+
+}
