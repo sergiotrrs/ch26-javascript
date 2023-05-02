@@ -216,11 +216,15 @@ console.log("Modelo " + model + ", color: " + colorAuto );
    Hacer una función que realice la división de 2 números
    y me entregue (return) en entero el cociente y residuo
 */
-
-function divison( a, b){
-
-  return
+const division = (numA, numB) => {
+  const cociente = parseInt(numA/numB);
+  const residuo  = numA % numB;
+  return { cociente, residuo };
 }
 
-console.log(`El resultado de 9/5, cociente: ${ valor }, residuo ${ valor } `);
+//console.log(`El resultado de 9/5, cociente: ${ division(9,5).cociente }, residuo ${ division(9,5).residuo } `);
+
+const { cociente, residuo} = division(9,5);
+console.log(`El resultado de 9/5, cociente: ${ cociente }, residuo ${ residuo } `);
+
 
