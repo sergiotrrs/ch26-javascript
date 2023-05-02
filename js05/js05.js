@@ -227,4 +227,4 @@ const division = (numA, numB) => {
 const { cociente, residuo} = division(9,5);
 console.log(`El resultado de 9/5, cociente: ${ cociente }, residuo ${ residuo } `);
 
-
+// fin de la sesion;
