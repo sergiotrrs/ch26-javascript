@@ -217,4 +217,10 @@ console.log("Modelo " + model + ", color: " + colorAuto );
    y me entregue (return) en entero el cociente y residuo
 */
 
+function divison( a, b){
+
+  return
+}
+
+console.log(`El resultado de 9/5, cociente: ${ valor }, residuo ${ valor } `);
 
