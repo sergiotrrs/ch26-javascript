@@ -44,9 +44,43 @@ const changeEmphasis = ( newTxt, url ) => {
     //console.log(emphasisRef);
     for (element of emphasisRef){
         console.log(element);
-        element.innerHTML = `${newTxt}`;
+        element.innerHTML = `<a href="${url}" target="_blank"> ${newTxt} </a> `;
     }
 
 };
 
-changeEmphasis("viernes friki", "http://...");
+changeEmphasis("viernes friki", "https://frikishop.com.mx/");
+changeEmphasis("viernes de cholo", "https://www.etsy.com/mx/market/cholo_style");
+
+// ------------ Selector universal --------------------------------
+// querySelector
+
+const findElementByQuerySelector = () =>{
+    const refElements = document.querySelector("p em");
+    refElements.innerHTML = `La Ch 26 es bien <strong>chida</strong> y les gusta el 11:11`;
+}
+findElementByQuerySelector();
+
+// -------------- Crear nuevo elemento ----------------------------
+// appendChild
+
+const newElement = () => {
+    const newElementRef = document.createElement("p"); // <p> </p>
+    
+    newElementRef.innerHTML = ` La Ch 26 le gusta:
+    <ul>
+        <li>El pan de muerto</li>
+        <li>El chismesito</li>
+        <li>El pozole</li>
+        <li>Pizza</li>
+        <li>El pulque</li>  
+    </ul>
+    `
+    const articleRef = document.querySelector("article");
+    articleRef.appendChild( newElementRef  ); // Se agrega el nuevo elemento
+    // Clonar el nodo anterior
+    // const nodoClonado = articleRef.cloneNode( true );
+    // document.querySelector("#article-news").appendChild( nodoClonado );
+};
+
+newElement();
