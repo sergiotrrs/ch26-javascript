@@ -39,8 +39,14 @@ changeSubtitleById("viernes de cholos");
 //------------ Encontrar elementos por su tag ----------------------------------
 // getElementsByTagName()
 
-const changeEmphasis = ( newTxt ) => {
+const changeEmphasis = ( newTxt, url ) => {
+    const emphasisRef = document.getElementsByTagName("em");
+    //console.log(emphasisRef);
+    for (element of emphasisRef){
+        console.log(element);
+        element.innerHTML = `${newTxt}`;
+    }
 
 };
 
-changeEmphasis("viernes friki");
+changeEmphasis("viernes friki", "http://...");
