@@ -124,3 +124,4 @@ const reestablecerBoton = () => {
     const buttonRef = document.getElementById("button-B");
     
 }
+
