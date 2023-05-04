@@ -24,12 +24,28 @@ const getProducts = ( httpUrl ) =>{
         })
         .then ( (productsObj)=> {
             console.log(productsObj)
-            // Quiero imprimir solo el titulo de cada producto.
-            
+            // Quiero imprimir solo el título de cada producto.
+            for (let product of productsObj ){
+                console.log(product.title);
+            }
 
         })
         .catch( error=> console.log(error)  );
 
 }
 
-getProducts( url );
+//getProducts( url );
+
+// --------------- Consumir Fetch usando async-await
+
+const getProductsWithAwait = async ( httpUrl) => {
+    const productsJson = await fetch( httpUrl) ;
+    const products = await productsJson.json(); // Conversión de JSON a objeto
+    console.log( products );
+    
+    for(let product of products)
+        console.log( product.title );
+
+}
+
+getProductsWithAwait( url );
