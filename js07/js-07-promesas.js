@@ -57,6 +57,7 @@ const divisionConParametros = (a, b) =>{
     const myPromise = new Promise(  (resolve, reject ) =>{
         if( b === 0 )
             reject("No se puede realizar una división por cero");
+            //setTimeout(() => reject( "¡División por cero!"), 5000) ;
         else
             resolve(a/b);
     } );
@@ -64,34 +65,58 @@ const divisionConParametros = (a, b) =>{
     return myPromise;
 }
 
+
 divisionConParametros(3,4)
-    .then( (response)=> console.log(response) ) // 0.75
-    .catch( (error)=> console.log(error) );
+    .then( (response)=> {
+        console.log(response); // 0.75
+        return response + 10; 
+    }) 
+    .then( (mas10Unidades)=> console.log( mas10Unidades) ) // 10.75
+    .catch( (error)=> console.log(error) )
+    .finally( ()=> console.log("Se terminó la división")  );
+
 
 divisionConParametros(3,0)
     .then( (response)=> console.log(response) )
     .catch( (error)=> console.log(error) ); // No se puede realizar una división por cero
+    
+// ---------- Consumir las promesas con async y await
 
 
-/* 
-
-const divisionAsincrona = (a,b) => {
-    const myPromise =  new Promise( (resolve, reject) =>{
-        if (b!== 0)
-            resolve(a/b);
-        else
-            reject("No se puede realizar una divisón por cero");
-    }  )
-return myPromise;
+const realizarDivisionSincrona = async () => {
+    console.log("----Resolviendo divisiones---->");    
+    const resultado = await divisionConParametros(20,4) ; // 5
+    console.log( resultado );
+    console.log( resultado + 100 ); // 105
+   // const resultadoErroneo = await divisionConParametros(20,0) ; // No se puede realizar una división por cero
+    //console.log( resultadoErroneo)
+    console.log("<----Terminando divisiones-----");
 }
 
-const divide = (a, b) => {
-  divisionAsincrona(a,b)
-    .then( resolve => console.log(resolve)   )
-    .catch(error => console.error(error) )
+realizarDivisionSincrona();
+
+// ---------------- Manejo de exepciones con try y catch
+/*
+ Sintaxis
+  try{
+
+  } catch( error ){
+    
+  }
+*/
+
+const manejoDeExepciones = async () =>{
+    console.log("----Resolviendo divisiones usando try y catch---->");   
+    
+    try {
+        const resultadoErroneo = await divisionConParametros(20,0) ;
+        console.log( resultadoErroneo)
+        
+    } catch (error) {
+        console.error("Asyn-Await" + error );
+    }
+    
+    console.log("<----Terminando divisiones usando try y catch-----");
 };
 
-divide(3,4);
-divide(3,0);
-
- */
+manejoDeExepciones();
