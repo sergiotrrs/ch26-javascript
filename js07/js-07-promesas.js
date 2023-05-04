@@ -120,3 +120,32 @@ const manejoDeExepciones = async () =>{
 };
 
 manejoDeExepciones();
+
+// ---------------------------------------------
+// Promise.resolve();
+
+const promesaRapida = Promise.resolve(123);
+const promesaNewPromise = new Promise(  (resolve, reject)=>{
+    resolve(123);
+});
+
+// ------ Resolver (consumir) con .then
+const consumirConThen = () => {
+    promesaRapida.then( value => console.log("Consumir con Then "+value )  );
+    console.log(456);
+}
+
+// ------ Resolver con Async-Await
+const consumirConAwait = async () => {
+    console.log("Consumir con await "+  await promesaRapida  );
+    console.log(789);
+};
+
+consumirConThen();
+consumirConAwait(); 
+
+// 456 ---
+// then 123 ----
+// await 123 ----
+// 789 ------
+
