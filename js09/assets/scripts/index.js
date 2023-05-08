@@ -24,13 +24,32 @@ const getUsersAxios = () => {
 
 const getUsersAxiosAwait = async () => {
   try {
-    const users = await axios.get(url);
-    console.log(users);
+    const users = await axios.get("https://reqres.in/api/users?page=2");
+    const userId2 = await axios.get("https://reqres.in/api/users/2");
+    console.log(users.data.data);
+    console.log(userId2);
   } catch (error) {
-    console.log(error );
+    console.log(error);
     //alert( error.message  )
   }
 };
 
 // ------- Solicutd POst con Axios. ------------------
 
+const userData = {
+    name: 'Juan',
+    email: 'juan@example.com',
+    password: '123456'
+  };
+
+
+const newUser = () => {
+  axios
+    .post("https://reqres.in/api/users", userData )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
