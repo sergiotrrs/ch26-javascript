@@ -1,0 +1,20 @@
+{
+  "name": "js09-manejador",
+  "version": "1.0.1",
+  "description": "Uso de NPM para manejar dependencias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "Generation",
+    "js09"
+  ],
+  "author": "Sergio Torres",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0-alpha3"
+  }
+}
