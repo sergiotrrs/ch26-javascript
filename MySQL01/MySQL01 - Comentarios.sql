@@ -4,5 +4,5 @@
 */
 
 -- Este es un comentario de línea
--- Ver todas las bases de datos disponibles.
-SHOW DATABASES;
+
+SHOW DATABASES; -- Ver todas las bases de datos disponibles.
