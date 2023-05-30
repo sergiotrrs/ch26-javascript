@@ -1,0 +1,22 @@
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (1, 5, 3);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (2, 10, 4);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (3, 2, 1);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (4, 7, 2);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (5, 3, 5);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (6, 8, 3);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (7, 6, 1);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (8, 15, 4);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (9, 1, 2);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (10, 12, 5);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (4, 9, 3);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (7, 11, 4);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (3, 14, 1);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (1, 4, 2);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (5, 13, 5);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (8, 10, 3);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (2, 6, 1);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (6, 3, 4);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (9, 9, 2);
+INSERT INTO orders_has_products (order_id, product_id, amount) VALUES (10, 7, 5);
+
+SELECT * FROM ch26_la_comer.orders_has_products;
