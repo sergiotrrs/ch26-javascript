@@ -20,7 +20,11 @@ SELECT *
 SELECT DATE_ADD( now(), INTERVAL 10 DAY ) AS futuro;
 -- Todos los que tienen customer_id = 5
  -- cambiar delivery_time a purchase_date + 2.
- 
+UPDATE orders SET 
+ delivery_date = DATE_ADD(purchase_date, INTERVAL 1 DAY)
+ WHERE customer_id = 4;
+
+
  
 
 
