@@ -24,7 +24,48 @@ UPDATE orders SET
  delivery_date = DATE_ADD(purchase_date, INTERVAL 1 DAY)
  WHERE customer_id = 4;
 
+-- Conocer el tiempo transcurrido
+SELECT *
+ , datediff( delivery_date , purchase_date ) AS "delivery time"
+  -- FROM orders ORDER BY `delivery time` ASC;
+ FROM orders ORDER BY `delivery time` DESC;
 
- 
+ -- Solo las ordenes (descendente) que han tenido 
+ -- tiempos de entrega mayor o igual a 5 días.
+ SELECT *, 
+  datediff(delivery_date, purchase_date) AS "delivery_time" 
+  FROM orders 
+  -- WHERE DATEDIFF(delivery_date, purchase_date) >= 5 
+  ORDER BY `delivery_time` DESC, delivery_date DESC;
 
+CREATE VIEW orders_delivery AS
+ SELECT *, 
+  datediff(delivery_date, purchase_date) AS "delivery_time" 
+  FROM orders 
+  ORDER BY `delivery_time` DESC, delivery_date DESC;
+  
+ SELECT * FROM orders_delivery
+  WHERE delivery_time >= 5;
 
+ WITH DATA AS(
+	SELECT *, datediff(delivery_date, purchase_date)
+		AS shipping_time FROM orders
+		ORDER BY shipping_time DESC)
+	SELECT * FROM DATA
+	WHERE shipping_time >= 5;
+
+-- Procedimiento almacenado
+CALL show_delivery_time(7);
+
+DELIMITER $$
+CREATE PROCEDURE show_delivey_time_manual (IN days INT)
+BEGIN
+  SELECT *, 
+  datediff(delivery_date, purchase_date) AS "delivery_time" 
+  FROM orders 
+  WHERE DATEDIFF(delivery_date, purchase_date) >= days 
+  ORDER BY `delivery_time` DESC, delivery_date DESC;
+END $$
+DELIMITER ;
+
+CALL show_delivey_time_manual(5);
