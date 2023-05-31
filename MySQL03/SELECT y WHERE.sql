@@ -56,6 +56,21 @@ SELECT * FROM customers WHERE NOT firstname = 'alejandro';
 SELECT * FROM customers 
 	WHERE NOT firstname LIKE "Alejandr_";
 
+SELECT email FROM customers WHERE email like "%@gamil.com";
+
+-- Cambiar @gamil por @gmail
+UPDATE customers
+	SET email = REPLACE(email, '@gamil.com', '@gmail.com')
+    WHERE email LIKE "%@gamil.com";
+
+-- Modificar el nombre Alejandro por Alex en
+-- donde el email != @gmail.com
+UPDATE customers SET firstname="Alex" 
+ WHERE firstname= "Alejandro" 
+	AND NOT email LIKE "%@gmail.com";
+
+SELECT * FROM customers;
+
 
 
 
