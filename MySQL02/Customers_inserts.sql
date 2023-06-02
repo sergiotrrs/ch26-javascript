@@ -2,7 +2,7 @@
 USE `ch26-ecommerce`;
 
 -- Insertando un registro, especificando la DB.
-INSERT INTO `ch26-ecommerce`.`customers`( `customer_id`, `firstname`, `lastname`, `address`, `email`)
+INSERT INTO `customers`( `customer_id`, `firstname`, `lastname`, `address`, `email`)
  VALUES( 1, "Sergio", "Torres", "Av. siempre viva", "sergio@gmail.com");
  
 -- Insertando un registro, con un ID 100 
