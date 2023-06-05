@@ -43,3 +43,19 @@ SELECT
 -- Listar las líneas con el número de estaciones que tienen
 -- 6 Roja 11
 -- 2 Azul 23 
+SELECT `lines`.`name`, `lines`.`color`,
+	COUNT(DISTINCT `lines_stations`.`station_id`) AS "N. estaciones"	
+	FROM `lines`
+    INNER JOIN `lines_stations`
+    ON `lines`.`id` = `lines_stations`.`line_id`    
+    GROUP BY `lines`.`id`
+    HAVING `N. estaciones` >= 20;
+     -- Muestre solo las líneas >= 20 estaciones.
+    
+
+SELECT `lines`.name, `lines`.color, COUNT(DISTINCT lines_stations.station_id) AS total_estaciones
+FROM `lines`
+INNER JOIN lines_stations ON `lines`.id = lines_stations.line_id
+INNER JOIN stations ON lines_stations.station_id = stations.id
+GROUP BY `lines`.id, `lines`.name, `lines`.color;
+
